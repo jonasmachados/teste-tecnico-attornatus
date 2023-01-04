@@ -26,16 +26,16 @@ public class TestConfig implements CommandLineRunner {
 
         Pessoa p1 = new Pessoa(null, "Jose Luiz", formatador.parse("14/10/1980"));
         Pessoa p2 = new Pessoa(null, "Ana Maria", formatador.parse("18/05/1992"));
-        pessoaRepositories.saveAll(Arrays.asList(p1, p2));
 
-        Endereco e1 = new Endereco(null, "Avenida do Estado", "01025‑020", "563");
-        Endereco e2 = new Endereco(null, "Avenida Exterior", "01015‑100", "98");
+        Endereco e1 = new Endereco(null, "Avenida do Estado", "01025‑020", "563", "SP");
+        Endereco e2 = new Endereco(null, "Avenida Exterior", "01015‑100", "98", "SP");
         enderecoRepositories.saveAll(Arrays.asList(e1, e2));
 
         p1.getEnderecos().add(e1);
         p2.getEnderecos().add(e2);
+        
         pessoaRepositories.saveAll(Arrays.asList(p1, p2));
-
+        
     }
 
 }

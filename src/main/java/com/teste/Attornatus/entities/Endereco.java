@@ -29,11 +29,12 @@ public class Endereco implements Serializable {
     public Endereco() {
     }
 
-    public Endereco(Long id, String logradouro, String cep, String numero) {
+    public Endereco(Long id, String logradouro, String cep, String numero, String cidade) {
         this.id = id;
         this.logradouro = logradouro;
         this.cep = cep;
         this.numero = numero;
+        this.cidade = cidade;
     }
   
 }
