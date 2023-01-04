@@ -9,6 +9,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -33,7 +36,7 @@ public class Pessoa implements Serializable {
     @JsonFormat(pattern = "dd/MM/yyyy")
     private Date dataNascimento;
     
-    @OneToMany
+    @ManyToMany
     private List<Endereco> enderecos = new ArrayList<>();
 
     public Pessoa() {

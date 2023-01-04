@@ -1,5 +1,6 @@
 package com.teste.Attornatus.services;
 
+import com.teste.Attornatus.entities.Endereco;
 import com.teste.Attornatus.entities.Pessoa;
 import com.teste.Attornatus.repositories.PessoaRepository;
 import java.util.List;
@@ -30,7 +31,7 @@ public class PessoaService {
 
     public Pessoa update(Long id, Pessoa obj) {
         try {
-            Pessoa entity = findById(id);;
+            Pessoa entity = findById(id);
             updateData(entity, obj);
             return repository.save(entity);
         } catch (EntityNotFoundException e) {
@@ -43,6 +44,14 @@ public class PessoaService {
         entity.setNome(obj.getNome());
         entity.setDataNascimento(obj.getDataNascimento());
 
+    }
+
+    public Pessoa addEndereco(Long id, Endereco end) {
+
+        Pessoa pessoa = findById(id);
+        pessoa.getEnderecos().add(end);
+        
+        return repository.save(pessoa);
     }
 
 }

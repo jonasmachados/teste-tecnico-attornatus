@@ -32,6 +32,7 @@ public class TestConfig implements CommandLineRunner {
         enderecoRepositories.saveAll(Arrays.asList(e1, e2));
 
         p1.getEnderecos().add(e1);
+        p1.getEnderecos().add(e2);
         p2.getEnderecos().add(e2);
         
         pessoaRepositories.saveAll(Arrays.asList(p1, p2));

@@ -1,5 +1,6 @@
 package com.teste.Attornatus.resource;
 
+import com.teste.Attornatus.entities.Endereco;
 import com.teste.Attornatus.entities.Pessoa;
 import com.teste.Attornatus.services.PessoaService;
 import java.net.URI;
@@ -7,6 +8,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -47,5 +49,10 @@ public class PessoaResource {
         Pessoa newObj = service.update(id, obj);
         return ResponseEntity.ok().body(newObj);
     }
-
+    
+    @PatchMapping("/addEndereco/{id}")
+    public Pessoa addEndereco(@PathVariable Long id, @RequestBody Endereco obj) {
+        return service.addEndereco(id, obj);
+    }
+    
 }
