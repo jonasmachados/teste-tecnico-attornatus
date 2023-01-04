@@ -44,13 +44,5 @@ public class Pessoa implements Serializable {
         this.nome = nome;
         this.dataNascimento = dataNascimento;
     }
-
-    public List<Endereco> getEnderecos() {
-        return enderecos;
-    }
-
-    public void setEnderecos(List<Endereco> enderecos) {
-        this.enderecos = enderecos;
-    }
-    
+        
 }

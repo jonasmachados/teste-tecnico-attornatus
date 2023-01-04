@@ -2,13 +2,13 @@ package com.teste.Attornatus.config;
 
 import com.teste.Attornatus.entities.Endereco;
 import com.teste.Attornatus.entities.Pessoa;
-import com.teste.Attornatus.repositories.EnderecoRepositories;
-import com.teste.Attornatus.repositories.PessoaRepositories;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
+import com.teste.Attornatus.repositories.PessoaRepository;
+import com.teste.Attornatus.repositories.EnderecoRepository;
 
 @Configuration
 public class TestConfig implements CommandLineRunner {
@@ -16,10 +16,10 @@ public class TestConfig implements CommandLineRunner {
     SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
 
     @Autowired
-    private PessoaRepositories pessoaRepositories;
+    private PessoaRepository pessoaRepositories;
 
     @Autowired
-    private EnderecoRepositories enderecoRepositories;
+    private EnderecoRepository enderecoRepositories;
 
     @Override
     public void run(String... args) throws Exception {

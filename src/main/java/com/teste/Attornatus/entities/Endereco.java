@@ -6,7 +6,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -25,6 +24,7 @@ public class Endereco implements Serializable {
     private String logradouro;
     private String cep;
     private String numero;
+    private String cidade;
 
     public Endereco() {
     }
