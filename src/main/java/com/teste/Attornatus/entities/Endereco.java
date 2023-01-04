@@ -12,7 +12,6 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@AllArgsConstructor
 @Table(name = "tb_endereco")
 @Entity
 public class Endereco implements Serializable {
@@ -20,7 +19,7 @@ public class Endereco implements Serializable {
     private static final long serialVersionUID = 1L;
     
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
     private String logradouro;
@@ -29,5 +28,12 @@ public class Endereco implements Serializable {
 
     public Endereco() {
     }
-    
+
+    public Endereco(Long id, String logradouro, String cep, String numero) {
+        this.id = id;
+        this.logradouro = logradouro;
+        this.cep = cep;
+        this.numero = numero;
+    }
+  
 }

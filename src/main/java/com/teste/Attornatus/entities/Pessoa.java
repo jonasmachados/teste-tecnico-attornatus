@@ -25,7 +25,7 @@ public class Pessoa implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
     private String nome;
@@ -37,6 +37,20 @@ public class Pessoa implements Serializable {
     private List<Endereco> enderecos = new ArrayList<>();
 
     public Pessoa() {
+    }
+
+    public Pessoa(Long id, String nome, Date dataNascimento) {
+        this.id = id;
+        this.nome = nome;
+        this.dataNascimento = dataNascimento;
+    }
+
+    public List<Endereco> getEnderecos() {
+        return enderecos;
+    }
+
+    public void setEnderecos(List<Endereco> enderecos) {
+        this.enderecos = enderecos;
     }
     
 }
