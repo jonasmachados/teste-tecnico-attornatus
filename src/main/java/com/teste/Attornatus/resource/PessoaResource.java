@@ -54,5 +54,5 @@ public class PessoaResource {
     public Pessoa addEndereco(@PathVariable Long id, @RequestBody Endereco obj) {
         return service.addEndereco(id, obj);
     }
-    
+        
 }
