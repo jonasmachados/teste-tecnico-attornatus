@@ -32,8 +32,7 @@ public class PessoaResource {
 
     @GetMapping(value = "/{id}")
     public ResponseEntity<Pessoa> findById(@PathVariable Long id) {
-        Pessoa obj = service.findById(id);
-        return ResponseEntity.ok().body(obj);
+        return ResponseEntity.ok().body(service.findById(id));
     }
 
     @PostMapping

@@ -1,10 +1,9 @@
 package com.teste.Attornatus.entities;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonFormat.Shape;
 import java.io.Serializable;
-import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,7 +17,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
-import org.springframework.format.annotation.DateTimeFormat;
 
 @Getter
 @Setter
@@ -38,8 +36,8 @@ public class Pessoa implements Serializable {
     private String nome;
 
     @NotNull(message = "Campo date é requerido")
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
-    private Date dataNascimento;
+    @JsonFormat(pattern = "dd/MM/yyyy", shape = Shape.STRING)
+    private String dataNascimento;
 
     @ManyToMany
     private List<Endereco> enderecos = new ArrayList<>();
@@ -47,7 +45,7 @@ public class Pessoa implements Serializable {
     public Pessoa() {
     }
 
-    public Pessoa(Long id, String nome, Date dataNascimento) {
+    public Pessoa(Long id, String nome, String dataNascimento) {
         this.id = id;
         this.nome = nome;
         this.dataNascimento = dataNascimento;
