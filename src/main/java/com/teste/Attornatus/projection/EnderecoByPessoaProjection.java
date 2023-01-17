@@ -9,5 +9,5 @@ public interface EnderecoByPessoaProjection {
     String getLogradouro();
 
     String getNumero();
-
+    
 }
